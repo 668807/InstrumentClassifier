@@ -205,3 +205,44 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+claude/
+
+# Data (for stort for git)
+data/
+*.wav
+*.mp3
+*.flac
+
+# Preprocessede arrays
+*.npy
+*.npz
+
+# Modell-checkpoints
+*.h5
+*.keras
+*.pkl
+saved_models/
+checkpoints/
+
+# Spektrogrammer (genererte filer)
+spectrograms/
+
+# Colab
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# W&B
+wandb/
+
+# Miljøvariabler
+.env
+
+.ruff_cache/

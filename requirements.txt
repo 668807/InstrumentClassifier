@@ -1,0 +1,12 @@
+tensorflow>=2.15
+keras>=3.0
+librosa>=0.10
+soundfile>=0.12
+audiomentations>=0.36
+scikit-learn>=1.4
+matplotlib>=3.8
+seaborn>=0.13
+numpy>=1.24
+pandas>=2.0
+gradio>=4.0
+tf-keras-vis>=0.8
