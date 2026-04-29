@@ -47,17 +47,18 @@ Datasettet lastes ned automatisk i notebook `01_eda.ipynb` (krever Google Drive)
 
 ## Resultater
 
-| Modell                          | Test Accuracy | Merknad                              |
-|---------------------------------|:-------------:|--------------------------------------|
-| Dummy (most frequent)           | 11.6 %        | Baseline for tilfeldig gjetting      |
-| Baseline CNN                    | 72.9 %        | Enkel CNN fra scratch                |
-| Improved CNN (residual)         | 79.1 %        | + residual connections, augmentation |
-| Improved CNN (feature fusion)   | 79.2 %        | + MFCC og chroma som ekstra kanaler  |
-| Subclassed CNN                  | 63.0 % / 66.9 % | Custom training loop, 63 % val / 66.9 % IRMAS testdata |
-| AST Transfer Learning           | 66.1 % (F1)   | Multi-label, IRMAS testdata (Part1)  |
-| Egenbygd Transformer            | ~58 %         | Fra scratch, begrenset av overfitting |
+| Modell                          | Accuracy (val) | Accuracy (TestData Part1) | Macro F1 | Merknad                              |
+|---------------------------------|:--------------:|:-------------------------:|:--------:|--------------------------------------|
+| Dummy (most frequent)           | 11.6 %         | —                         | —        | Baseline for tilfeldig gjetting      |
+| Baseline CNN                    | 72.9 %         | —                         | 0.72     | Enkel CNN fra scratch                |
+| Improved CNN (residual)         | 79.1 %         | —                         | 0.78     | + residual connections, augmentation |
+| Improved CNN (feature fusion)   | 79.2 %         | —                         | 0.78     | + MFCC og chroma som ekstra kanaler  |
+| Subclassed CNN                  | 63.0 %         | 67 %                      | 0.61     | Custom training loop, Top-2 accuracy metric |
+| AST (transfer learning)         | 89 %           | 66 %                      | 0.88     | Pretrent på AudioSet, finjustert på IRMAS |
+| Egenbygd Transformer            | ~58 %          | —                         | —        | Proof-of-concept, begrenset av overfitting |
 
-Beste single-label modell: **Improved CNN med feature fusion (79.2 % accuracy)**.
+Beste modell: **AST med transfer learning (89 % accuracy, macro F1 0.88)**.
+Beste CNN trent fra scratch: **Improved CNN (79.1 % accuracy)**.
 
 ## Kjøring
 
@@ -65,13 +66,10 @@ Alle notebooks er laget for **Google Colab** med GPU-runtime.
 
 1. Åpne notebooks i Google Colab
 2. Velg GPU-runtime: `Runtime → Change runtime type → T4 GPU`
-3. Kjør `01_eda.ipynb` – laster ned IRMAS-datasettet til Google Drive
-4. Kjør `02_preprocessing.ipynb` – genererer preprocessede `.npy`-filer
-5. Kjør modell-notebooks 03–05 i vilkårlig rekkefølge (leser fra preprocessede `.npy`-filer)
-6. Notebooks 06–08 laster ned og prosesserer datasettet selv – kan kjøres uavhengig av steg 3–4
-7. Kjør `Gradio_app.ipynb` for å starte webappen – en offentlig lenke genereres i output
+3. Kjør notebooks i rekkefølge (01 → 08)
+4. Kjør `Gradio_app.ipynb` for å starte webappen – en offentlig lenke genereres i output
 
-**Merk:** Notebook 06 (AST) bruker PyTorch og HuggingFace Transformers, og installerer avhengigheter direkte i notebooken.
+**Merk:** Notebook 06 (AST) bruker PyTorch og HuggingFace Transformers, og installerer avhengigheter direkte i notebooken. Notebooks 06–08 laster ned og prosesserer datasettet selv.
 
 ## Gradio-app
 
@@ -93,7 +91,6 @@ Appen startes ved å kjøre `Gradio_app.ipynb` i Colab. En midlertidig offentlig
 │   ├── 07_Subclassed.ipynb
 │   ├── 08_TransformerArch.ipynb
 │   └── Gradio_app.ipynb
-├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
