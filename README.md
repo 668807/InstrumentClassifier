@@ -39,6 +39,7 @@ app/           # Gradio deployment-app
 1. Åpne notebooks i Google Colab
 2. Monter Google Drive og last ned IRMAS-datasettet (se `01_eda.ipynb`)
 3. Kjør notebooks i rekkefølge (01 → 06)
+4. Kjør Gradio-app notebooken for tilgang til webapplikasjonen
 
 ## Teknologi
 - Python, TensorFlow/Keras
