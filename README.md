@@ -28,17 +28,10 @@ Datasettet lastes ned separat (ikke inkludert i repo). Se notebook `01_eda.ipynb
 | vio | Fiolin |
 | voi | Stemme |
 
-## Prosjektstruktur
-```
-notebooks/     # Colab notebooks (hovedarbeidsflatene)
-src/           # Gjenbrukbare Python-moduler
-app/           # Gradio deployment-app
-```
-
 ## Kjøring
 1. Åpne notebooks i Google Colab
 2. Monter Google Drive og last ned IRMAS-datasettet (se `01_eda.ipynb`)
-3. Kjør notebooks i rekkefølge (01 → 06)
+3. Kjør notebooks i rekkefølge (01 → 08)
 4. Kjør Gradio-app notebooken for tilgang til webapplikasjonen
 
 ## Teknologi
