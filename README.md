@@ -1,4 +1,4 @@
-# Instrument Classification med Deep Learning
+# Instrument klassifisering med Deep Learning
 
 **Kurs:** DAT255 – Deep Learning Engineering, HVL (Vår 2026)
 
