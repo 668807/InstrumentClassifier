@@ -1,4 +1,4 @@
-# Instrument Classification with Deep Learning
+# Instrument Classification med Deep Learning
 
 **Kurs:** DAT255 – Deep Learning Engineering, HVL (Vår 2026)
 
@@ -69,15 +69,13 @@ Alle notebooks er laget for **Google Colab** med GPU-runtime.
 3. Kjør notebooks i rekkefølge (01 → 08)
 4. Kjør `Gradio_app.ipynb` for å starte webappen – en offentlig lenke genereres i output
 
-**Merk:** Notebook 06 (AST) bruker PyTorch og HuggingFace Transformers, og installerer avhengigheter direkte i notebooken. Notebooks 06–08 laster ned og prosesserer datasettet selv.
-
 ## Gradio-app
 
 Webapplikasjonen bruker den beste modellen (Improved CNN) og lar brukeren:
-- Laste opp et lydklipp (.wav)
+- Laste opp et lydklipp
 - Se topp-5 prediksjoner med sannsynligheter
 
-Appen startes ved å kjøre `Gradio_app.ipynb` i Colab. En midlertidig offentlig lenke genereres automatisk (gyldig i 1 uke).
+Appen startes ved å kjøre `Gradio_app.ipynb` i Colab. En midlertidig offentlig lenke genereres automatisk.
 
 ## Prosjektstruktur
 ```
