@@ -89,7 +89,7 @@ Appen startes ved å kjøre `Gradio_app.ipynb` i Colab. En midlertidig offentlig
 │   ├── 07_Subclassed.ipynb
 │   ├── 08_TransformerArch.ipynb
 │   └── Gradio_app.ipynb
-├── .gitignore
+|
 └── README.md
 ```
 
